@@ -1,8 +1,12 @@
-name: Hyprland #8424 → Discord (embeds)
+name: Hyprland #8424 → Discord (1h)
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "0 * * * *" # 1時間ごと
   workflow_dispatch:
+
+concurrency:
+  group: issue8424-discord
+  cancel-in-progress: true
 
 permissions:
   contents: write
